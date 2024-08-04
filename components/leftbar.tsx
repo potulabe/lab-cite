@@ -8,7 +8,7 @@ import {
   SheetHeader,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { Logo, NavMenu } from "./navbar";
+// import { Logo, NavMenu } from "./navbar";
 import { Button } from "./ui/button";
 import { AlignLeftIcon } from "lucide-react";
 import { FooterButtons } from "./footer";
@@ -34,18 +34,18 @@ export function SheetLeftbar() {
       <SheetContent className="flex flex-col gap-4 px-0" side="left">
         <SheetHeader>
           <SheetClose className="px-5" asChild>
-            <Logo />
+            {/* <Logo /> */}
           </SheetClose>
         </SheetHeader>
         <ScrollArea className="flex flex-col gap-4">
           <div className="flex flex-col gap-2 mt-3 mx-2 px-5">
-            <NavMenu isSheet />
+            {/* <NavMenu isSheet /> */}
           </div>
           <div className="mx-2 px-5">
-            <Menu isSheet />
+            {/* <Menu isSheet /> */}
           </div>
           <div className="p-6 pb-4 flex gap-2">
-            <FooterButtons />
+            {/* <FooterButtons /> */}
           </div>
         </ScrollArea>
       </SheetContent>
@@ -62,7 +62,7 @@ function Menu({ isSheet = false }) {
             <h4 className="font-medium sm:text-sm">{title}</h4>
             <div className="flex flex-col gap-3 sm:text-sm dark:text-neutral-300/85 text-neutral-800 ml-0.5">
               {items.map((subItem) => {
-                const key = `/docs/${href}${subItem.href}`;
+                const key = `/projects/${href}${subItem.href}`;
                 const Comp = (
                   <Anchor
                     activeClassName="font-medium text-primary"

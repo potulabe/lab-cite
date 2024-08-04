@@ -1,5 +1,8 @@
 import { ModeToggle } from "@/components/theme-toggle";
-import { GithubIcon, TwitterIcon, HexagonIcon } from "lucide-react";
+// import { GithubIcon, TwitterIcon, HexagonIcon } from "lucide-react";
+import Image from 'next/image';
+import lafrog from '../public/images/lafrog_petite.svg';
+import lafrog_noire from '../public/images/lafrog_petite_noire.svg';
 import Link from "next/link";
 import { buttonVariants } from "./ui/button";
 import Search from "./search";
@@ -9,26 +12,26 @@ import { page_routes } from "@/lib/routes-config";
 import { SheetClose } from "@/components/ui/sheet";
 
 export const NAVLINKS = [
-  {
-    title: "Documentation",
-    href: `/docs/${page_routes[0].href}`,
-  },
-  {
-    title: "Examples",
-    href: "#",
-  },
-  {
-    title: "Guides",
-    href: "#",
-  },
-  {
-    title: "Community",
-    href: "#",
-  },
-  {
-    title: "Blog",
-    href: "#",
-  },
+  // {
+  //   title: "Projects",
+  //   href: `/projects/${page_routes[0].href}`,
+  // },
+  // {
+  //   title: "Examples",
+  //   href: "#",
+  // },
+  // {
+  //   title: "Guides",
+  //   href: "#",
+  // },
+  // {
+  //   title: "Community",
+  //   href: "#",
+  // },
+  // {
+  //   title: "Blog",
+  //   href: "#",
+  // },
 ];
 
 export function Navbar() {
@@ -42,30 +45,30 @@ export function Navbar() {
               <Logo />
             </div>
             <div className="lg:flex hidden items-center gap-5 text-sm font-medium text-muted-foreground">
-              <NavMenu />
+              {/* <NavMenu /> */}
             </div>
           </div>
         </div>
 
         <div className="flex items-center gap-3">
           <div className="flex items-center gap-2">
-            <Search />
+            {/* <Search /> */}
             <div className="flex">
-              <Link
+              {/* <Link
                 href="https://github.com/nisabmohd/Docs-Stater-Template"
                 className={buttonVariants({ variant: "ghost", size: "icon" })}
               >
                 <GithubIcon className="h-[1.1rem] w-[1.1rem]" />
-              </Link>
-              <Link
+              </Link> */}
+              {/* <Link
                 href="#"
                 className={buttonVariants({
                   variant: "ghost",
                   size: "icon",
                 })}
               >
-                <TwitterIcon className="h-[1.1rem] w-[1.1rem]" />
-              </Link>
+                {/* <TwitterIcon className="h-[1.1rem] w-[1.1rem]" /> */}
+              {/* </Link> */}
               <ModeToggle />
             </div>
           </div>
@@ -78,34 +81,41 @@ export function Navbar() {
 export function Logo() {
   return (
     <Link href="/" className="flex items-center gap-2.5">
-      <HexagonIcon className="w-7 h-7 text-muted-foreground fill-current" />
-      <h2 className="text-md font-bold">template/docs</h2>
+      <picture>
+        <Image alt="Picture of the author" src={lafrog_noire} className="hidden dark:block" />
+        <Image alt="Picture of the author" src={lafrog} className="dark:hidden"/>
+      </picture>
+      <h1 className="text-md font-bold">Tabula Rana</h1>
     </Link>
   );
 }
 
-export function NavMenu({ isSheet = false }) {
-  return (
-    <>
-      {NAVLINKS.map((item) => {
-        const Comp = (
-          <Anchor
-            key={item.title + item.href}
-            activeClassName="text-black dark:text-white font-semibold"
-            absolute
-            href={item.href}
-          >
-            {item.title}
-          </Anchor>
-        );
-        return isSheet ? (
-          <SheetClose key={item.title + item.href} asChild>
-            {Comp}
-          </SheetClose>
-        ) : (
-          Comp
-        );
-      })}
-    </>
-  );
-}
+// export function NavMenu({ isSheet = false }) {
+//   if(!NAVLINKS.length) {
+//     return [];
+//   };
+//   return (
+//     <>
+//       {
+//       NAVLINKS.map((item) => {
+//         const Comp = (
+//           <Anchor
+//             key={item.title + item.href}
+//             activeClassName="text-black dark:text-white font-semibold"
+//             absolute
+//             href={item.href}
+//           >
+//             {item.title}
+//           </Anchor>
+//         );
+//         return isSheet ? (
+//           <SheetClose key={item.title + item.href} asChild>
+//             {Comp}
+//           </SheetClose>
+//         ) : (
+//           Comp
+//         );
+//       })}
+//     </>
+//   );
+// }

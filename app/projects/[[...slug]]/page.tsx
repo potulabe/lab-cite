@@ -20,17 +20,17 @@ export default async function DocsPage({ params: { slug = [] } }: PageProps) {
   return (
     <div className="flex items-start gap-12">
       <div className="flex-[3] pt-10">
-        <DocsBreadcrumb paths={slug} />
+        {/* <DocsBreadcrumb paths={slug} /> */}
         <Markdown>
           <h1>{res.frontmatter.title}</h1>
           <p className="-mt-4 text-muted-foreground text-[16.5px]">
             {res.frontmatter.description}
           </p>
           <div>{res.content}</div>
-          <Pagination pathname={pathName} />
+          {/* <Pagination pathname={pathName} /> */}
         </Markdown>
       </div>
-      <Toc path={pathName} />
+      {/* <Toc path={pathName} /> */}
     </div>
   );
 }

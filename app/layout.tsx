@@ -6,11 +6,13 @@ import { GeistMono } from "geist/font/mono";
 import { Footer } from "@/components/footer";
 import "./globals.css";
 
+// metadataBase: new URL("https://docstemplate.vercel.app/"),
+
 export const metadata: Metadata = {
-  title: "Docs stater template",
-  metadataBase: new URL("https://docstemplate.vercel.app/"),
+  title: "Xenopus Atlas",
+  metadataBase: new URL("https://xenopus.hms.harvard.edu"),
   description:
-    "This comprehensive documentation template, crafted with Next.js and available as open-source, delivers a sleek and responsive design, tailored to meet all your project documentation requirements.",
+    "On this site all the resources connected to Xenopus atlas will be published",
 };
 
 export default function RootLayout({
